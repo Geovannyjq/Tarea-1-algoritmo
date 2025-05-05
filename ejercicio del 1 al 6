@@ -1,0 +1,219 @@
+// Asignar y leer costo del producto
+// Asignar y leer dinero recibido
+// Si dinero recibido >= costo Entonces
+//   Calcular vuelto como: vuelto = dinero - costo
+//   Mostrar el vuelto
+// Sino
+//  Mostrar mensaje: el dinero no alcanza
+//Escribir los resultados de la salida
+
+Algoritmo Calculadoradevuelto
+
+	//Entrada
+	// declaracion de variables 
+	Definir costo, dinero, vuelto Como Real
+	
+	//Proceso
+	//asignar y leer el costo del produto y el dinero recibido
+	Escribir "ingrese costo del producto"; Leer costo
+	Escribir "ingrese dinero recibido "; Leer dinero
+	
+	//calcular el dinero recibido para el vuelto y verificar si alcanza para pagar el producto
+	Si dinero >= costo Entonces
+		vuelto = dinero - costo
+		Escribir " El vuelto es: $", vuelto
+	SiNo
+		Escribir "El dinero no alcanza para pagar el producto"
+	Fin Si
+	
+	// salida
+	Escribir "Costo del producto = $",costo
+	Escribir "Dinero recibido = $",dinero
+	Escribir "Vuelto = $",vuelto
+FinAlgoritmo
+
+
+
+// Leer el tipo de conversión (1: kg a lb, 2: lb a kg)
+// Leer la opcion escogida (tipo1, tipo 2)
+// Si tipo = 1 entonces
+//   Calcular libras = kilogramos * 2.20462
+//   Mostrar resultado
+// Sino si tipo = 2 entonces
+//   Calcular kilogramos = libras / 2.20462
+//   Mostrar resultado
+// Sino
+//    Mostrar mensaje de opción no válida
+
+Algoritmo ConversorkgLibras
+	//Entrada
+	//Declaramos las variables (tipo, kg, lb)
+	Definir tipo Como Entero
+	Definir kg, lb Como Real
+	
+	//Proceso 
+	//Escribimos  las seleccion de los tipos (1,2) 
+	//evaluamos la opción selecionada
+	Escribir "seleccione el tipo de conversión:"
+	Escribir "1: kilogramos a libras"
+	Escribir "2: libras a kilogramos"
+	Leer tipo
+	
+	// calculamos las conversiones de los tipos que sea elegido
+	// conversion de kilogramos a libras
+	Si tipo = 1  Entonces
+		Escribir "ingrese los kilogramos:"; Leer kg
+		lb = kg * 2.20462
+		Escribir kg, "kg equivale a ", lb, " libras"
+	SiNo
+		
+		// conversion de libras a kilogramos 
+		Si tipo = 2 Entonces
+            Escribir "Ingrese las libras:"
+            Leer lb
+            kg = lb / 2.20462
+            Escribir lb, " libras equivalen a ", kg, " kilogramos"
+        Sino
+           
+        FinSi
+	Fin Si
+	
+	// salida
+	Escribir "libras: ", lb
+	Escribir "kilogramos: ", kg
+FinAlgoritmo
+
+
+// Asignar y leer el monto de la compra
+// Si el monto < 100, aplicar 0%
+//sino
+// Si el monto > 100 y < 500, aplicar 5%
+// Si el monto > 500, aplicar 10%
+// Calcular descuento y total a pagar
+// Mostramos el descuento y total final
+Algoritmo Calculadora_Descuentos
+	// Entrada
+	// declaramos las variables y leemos 
+	Definir monto, descuento, total Como Real
+	
+	//Proceso
+	//pedimos que ingrese un monto paea poder leerlo y calcular 
+	Escribir "Ingrese el monto de la compra: "; Leer monto
+	
+	// segun el monto aplicado se calcula 
+	//calculamos el monto para aplicar un descuento ya sea de 0%, 5% o 10%
+	Si monto < 100 Entonces
+		descuento = 0 
+	SiNo
+		//aplicamos el 5% 
+		Si monto < 500 Entonces
+			descuento = monto * 0.05
+		SiNo
+			//aplicamos el 10%
+			descuento = monto * 0.10
+		Fin Si
+	Fin Si
+	// calculamos el total a pagar 
+	total = monto - descuento
+	
+	// salida 
+	Escribir "Descuento aplicado: $", descuento
+	Escribir "total a pagar: $", total
+FinAlgoritmo
+
+
+// Leer precio sin IVA
+// Calcular IVA (15% del precio)
+// Sumar IVA al precio
+// Calcular descuento (30% del total con IVA)
+// Restar descuento
+// Mostrar resultado final
+Algoritmo Calculo_IVA_y_Descuento
+	//Entrada
+	// Asignamos las variables 
+	Definir precio, iva, descuento Como Real
+	Definir precio_final, precioconiva Como Real
+	precio=0; precio_final=0; descuento=0.30
+	IVA=0.15; precioconiva=0
+	
+	//Proceso 
+	// Escribimos el precio y lo leemos 
+	Escribir "ingrese el precio sin IVA:"; Leer precio
+	//calculamos el precio final con IVA del 15% y descuento del 30%
+	iva = precio * 0.15
+	precioconiva = precio + IVA
+	descuento = precioconiva * 0.30
+	precio_final = precioconiva - descuento
+	
+	//salida
+	Escribir "IVA (15%): $", iva
+	Escribir "Descuento (30%): $", descuento
+	Escribir "Precio final con iva: $", precio_final
+FinAlgoritmo
+
+
+//Si el primer precio es mayor que el segundo, mostrar que el primer producto es más caro"
+//     Sino
+//     Si el segundo precio es mayor que el primero, mostrar que el segundo producto es más caro
+//	     sino ambos precios son iguales, mostrar que los productos tienen el mismo precio
+	//FinSi
+//FinSi
+Algoritmo Comparacion_Precios
+	//Entrada
+	//asignamos las variables (precio1, precio2) 
+	Definir precio1, precio2 Como Real
+	//Proceso 
+	//ingresamos los precios y los leemos
+	Escribir "ingrese el primer precio el producto:"; Leer precio1
+	Escribir "ingrese el segundo precio el producto:"; Leer precio2
+	
+	// comparamos los dos precios e indicamos cual es el mayor, menor o si son iguales 
+	Si precio1 > precio2 Entonces
+        Escribir "El primer producto es más caro que el segundo."
+    Sino
+        Si precio1 < precio2 Entonces
+            Escribir "El segundo producto es más caro que el primero."
+        Sino
+            Escribir "Ambos productos tienen el mismo precio."
+        FinSi
+    FinSi
+	
+FinAlgoritmo
+
+
+//  Asignar y leer la edad del cliente
+// Verificar la edad del cliente:
+//  0 a 12 ? Niño
+//  13 a 17 ? Joven
+//  18 a 64 ? Adulto
+//  65 o más ? Adulto mayor
+// 3. Mostrar el resultado
+
+Algoritmo Clasificador_Edad
+	//Entrada 
+	//definimos la variable 
+	Definir  edad Como Entero
+	
+	//Proceso 
+	// pedimos la edad del cliente y luego leemos 
+	Escribir "ingrese la edad del cliente:"; Leer edad 
+	
+	// verifcamos la edad del cliente 
+	Si edad >= 0 y edad <= 12 Entonces
+		Escribir "Es un niño"
+	SiNo
+		Si edad >= 13 y edad <= 17 Entonces
+			Escribir "Es un joven"
+		SiNo
+			Si edad >= 18 y edad <= 64 Entonces
+				Escribir "Es un adulto"
+			SiNo
+				Si edad >= 65 Entonces
+					Escribir "Es un adulto mayor"
+				SiNo
+					Escribir "Edad no válida"
+			Fin Si
+		Fin Si
+	Fin Si
+FinAlgoritmo
+
